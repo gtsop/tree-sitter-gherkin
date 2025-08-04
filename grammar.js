@@ -11,9 +11,10 @@ module.exports = grammar({
   name: "gherkin",
 
   rules: {
-    source_file: $ => choice(
+    source_file: $ => repeat(choice(
       $.feature_definition
-    ),
+    )),
+
 
     feature_definition: $ => seq(
       $.feature,
