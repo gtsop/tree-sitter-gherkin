@@ -1,0 +1,12 @@
+============
+Feature File
+============
+
+Feature: Feature Title
+
+---
+
+(source_file
+  (feature_definition
+    (feature)
+    (text)))

@@ -11,7 +11,19 @@ module.exports = grammar({
   name: "gherkin",
 
   rules: {
-    // TODO: add the actual grammar rules
-    source_file: $ => "hello"
+    source_file: $ => choice(
+      $.feature_definition
+    ),
+
+    feature_definition: $ => seq(
+      $.feature,
+      ":",
+      " ",
+      $.text
+    ),
+
+    feature: _ => /Feature/,
+    
+    text: _ => /[a-zA-Z ]+/
   }
 });
