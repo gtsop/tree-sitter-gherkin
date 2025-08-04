@@ -8,7 +8,15 @@
       "required": true,
       "types": [
         {
+          "type": "background",
+          "named": true
+        },
+        {
           "type": "feature",
+          "named": true
+        },
+        {
+          "type": "scenario",
           "named": true
         },
         {
@@ -35,7 +43,7 @@
     }
   },
   {
-    "type": " ",
+    "type": "\n",
     "named": false
   },
   {
@@ -43,7 +51,19 @@
     "named": false
   },
   {
+    "type": ": ",
+    "named": false
+  },
+  {
+    "type": "background",
+    "named": true
+  },
+  {
     "type": "feature",
+    "named": true
+  },
+  {
+    "type": "scenario",
     "named": true
   },
   {

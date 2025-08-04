@@ -11,20 +11,34 @@ module.exports = grammar({
   name: "gherkin",
 
   rules: {
-    source_file: $ => repeat(choice(
+    source_file: $ => choice(
       $.feature_definition
-    )),
-
+    ),
 
     feature_definition: $ => seq(
-      $.feature,
-      ":",
-      " ",
-      $.text
+      $._feature_line,
+      optional(
+        $._background_line
+      ),
+      optional(
+        $._scenario_line
+      )
     ),
+
+    background: _ => /Background/,
 
     feature: _ => /Feature/,
     
-    text: _ => /[a-zA-Z ]+/
+    scenario: _ => /Scenario/,
+    
+    text: _ => /[a-zA-Z ]+/,
+
+    _background_line: $ => seq($.background, ":", optional(repeat($._new_line))),
+
+    _feature_line: $ => seq($.feature, ": ", $.text, optional(repeat($._new_line))),
+
+    _scenario_line: $ => seq($.scenario, ": ", $.text, optional(repeat($._new_line))),
+
+    _new_line: _ => "\n"
   }
 });

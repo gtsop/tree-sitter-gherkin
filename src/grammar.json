@@ -16,29 +16,145 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "feature"
+          "name": "_feature_line"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_background_line"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_scenario_line"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "background": {
+      "type": "PATTERN",
+      "value": "Background"
+    },
+    "feature": {
+      "type": "PATTERN",
+      "value": "Feature"
+    },
+    "scenario": {
+      "type": "PATTERN",
+      "value": "Scenario"
+    },
+    "text": {
+      "type": "PATTERN",
+      "value": "[a-zA-Z ]+"
+    },
+    "_background_line": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "background"
         },
         {
           "type": "STRING",
           "value": ":"
         },
         {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_new_line"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "_feature_line": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "feature"
+        },
+        {
           "type": "STRING",
-          "value": " "
+          "value": ": "
         },
         {
           "type": "SYMBOL",
           "name": "text"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_new_line"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },
-    "feature": {
-      "type": "PATTERN",
-      "value": "Feature"
+    "_scenario_line": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "scenario"
+        },
+        {
+          "type": "STRING",
+          "value": ": "
+        },
+        {
+          "type": "SYMBOL",
+          "name": "text"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_new_line"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
     },
-    "text": {
-      "type": "PATTERN",
-      "value": "[a-zA-Z ]+"
+    "_new_line": {
+      "type": "STRING",
+      "value": "\n"
     }
   },
   "extras": [
