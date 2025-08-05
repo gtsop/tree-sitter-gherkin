@@ -7,11 +7,11 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "feature_declaration"
+          "name": "feature"
         }
       ]
     },
-    "feature_declaration": {
+    "feature": {
       "type": "SEQ",
       "members": [
         {

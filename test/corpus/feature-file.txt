@@ -11,7 +11,7 @@ Feature: Feature Title
 ---
 
 (source_file
-  (feature_declaration
+  (feature
     (title)
     (description
       (description_line))

@@ -12,10 +12,10 @@ module.exports = grammar({
 
   rules: {
     source_file: $ => choice(
-      $.feature_declaration
+      $.feature
     ),
 
-    feature_declaration: $ => seq(
+    feature: $ => seq(
       "Feature: ",
       $.title,
       optional($.description),

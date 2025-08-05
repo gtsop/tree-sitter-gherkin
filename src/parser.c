@@ -26,7 +26,7 @@ enum ts_symbol_identifiers {
   anon_sym_Scenario_COLON = 4,
   sym__newline = 5,
   sym_source_file = 6,
-  sym_feature_declaration = 7,
+  sym_feature = 7,
   sym_description = 8,
   sym_scenario = 9,
   aux_sym_description_repeat1 = 10,
@@ -40,7 +40,7 @@ static const char * const ts_symbol_names[] = {
   [anon_sym_Scenario_COLON] = "Scenario: ",
   [sym__newline] = "_newline",
   [sym_source_file] = "source_file",
-  [sym_feature_declaration] = "feature_declaration",
+  [sym_feature] = "feature",
   [sym_description] = "description",
   [sym_scenario] = "scenario",
   [aux_sym_description_repeat1] = "description_repeat1",
@@ -54,7 +54,7 @@ static const TSSymbol ts_symbol_map[] = {
   [anon_sym_Scenario_COLON] = anon_sym_Scenario_COLON,
   [sym__newline] = sym__newline,
   [sym_source_file] = sym_source_file,
-  [sym_feature_declaration] = sym_feature_declaration,
+  [sym_feature] = sym_feature,
   [sym_description] = sym_description,
   [sym_scenario] = sym_scenario,
   [aux_sym_description_repeat1] = aux_sym_description_repeat1,
@@ -89,7 +89,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
-  [sym_feature_declaration] = {
+  [sym_feature] = {
     .visible = true,
     .named = true,
   },
@@ -347,7 +347,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   },
   [STATE(1)] = {
     [sym_source_file] = STATE(8),
-    [sym_feature_declaration] = STATE(9),
+    [sym_feature] = STATE(9),
     [anon_sym_Feature_COLON] = ACTIONS(3),
   },
 };
@@ -444,9 +444,9 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [22] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_source_file, 1, 0, 0),
   [24] = {.entry = {.count = 1, .reusable = true}}, SHIFT(6),
   [26] = {.entry = {.count = 1, .reusable = true}}, SHIFT(13),
-  [28] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_feature_declaration, 3, 0, 0),
+  [28] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_feature, 3, 0, 0),
   [30] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_scenario, 2, 0, 0),
-  [32] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_feature_declaration, 4, 0, 0),
+  [32] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_feature, 4, 0, 0),
 };
 
 #ifdef __cplusplus

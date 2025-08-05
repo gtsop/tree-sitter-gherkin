@@ -15,7 +15,7 @@
     }
   },
   {
-    "type": "feature_declaration",
+    "type": "feature",
     "named": true,
     "fields": {},
     "children": {
@@ -62,7 +62,7 @@
       "required": true,
       "types": [
         {
-          "type": "feature_declaration",
+          "type": "feature",
           "named": true
         }
       ]
