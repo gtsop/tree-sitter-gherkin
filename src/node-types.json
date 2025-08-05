@@ -1,6 +1,6 @@
 [
   {
-    "type": "feature_definition",
+    "type": "feature_declaration",
     "named": true,
     "fields": {},
     "children": {
@@ -8,19 +8,11 @@
       "required": true,
       "types": [
         {
-          "type": "background",
+          "type": "description",
           "named": true
         },
         {
-          "type": "feature",
-          "named": true
-        },
-        {
-          "type": "scenario",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "title",
           "named": true
         }
       ]
@@ -36,38 +28,26 @@
       "required": true,
       "types": [
         {
-          "type": "feature_definition",
+          "type": "feature_declaration",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "\n",
-    "named": false
-  },
-  {
-    "type": ":",
-    "named": false
-  },
-  {
     "type": ": ",
     "named": false
   },
   {
-    "type": "background",
+    "type": "Feature",
+    "named": false
+  },
+  {
+    "type": "description",
     "named": true
   },
   {
-    "type": "feature",
-    "named": true
-  },
-  {
-    "type": "scenario",
-    "named": true
-  },
-  {
-    "type": "text",
+    "type": "title",
     "named": true
   }
 ]

@@ -12,33 +12,18 @@ module.exports = grammar({
 
   rules: {
     source_file: $ => choice(
-      $.feature_definition
+      $.feature_declaration
     ),
 
-    feature_definition: $ => seq(
-      $._feature_line,
-      optional(
-        $._background_line
-      ),
-      optional(
-        $._scenario_line
-      )
+    feature_declaration: $ => seq(
+      "Feature",
+      ": ",
+      $.title,
+      optional($.description)
     ),
 
-    background: _ => /Background/,
+    title: _ => /.*\n/,
 
-    feature: _ => /Feature/,
-    
-    scenario: _ => /Scenario/,
-    
-    text: _ => /[a-zA-Z ]+/,
-
-    _background_line: $ => seq($.background, ":", optional(repeat($._new_line))),
-
-    _feature_line: $ => seq($.feature, ": ", $.text, optional(repeat($._new_line))),
-
-    _scenario_line: $ => seq($.scenario, ": ", $.text, optional(repeat($._new_line))),
-
-    _new_line: _ => "\n"
-  }
+    description: _ => token(prec(-1, /[\s\S]+/))
+  },
 });

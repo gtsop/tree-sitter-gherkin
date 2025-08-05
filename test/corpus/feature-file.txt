@@ -3,15 +3,12 @@ Feature File
 ============
 
 Feature: Feature Title
-  Background:
-  Scenario: Scenario Title
+
+  some description that may or may not exist
 
 ---
 
 (source_file
-  (feature_definition
-    (feature)
-    (text)
-    (background)
-    (scenario)
-    (text)))
+  (feature_declaration
+    (title)
+    (description)))
