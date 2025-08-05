@@ -16,11 +16,7 @@
       "members": [
         {
           "type": "STRING",
-          "value": "Feature"
-        },
-        {
-          "type": "STRING",
-          "value": ": "
+          "value": "Feature: "
         },
         {
           "type": "SYMBOL",
@@ -37,23 +33,60 @@
               "type": "BLANK"
             }
           ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "scenario"
         }
       ]
     },
     "title": {
       "type": "PATTERN",
-      "value": ".*\\n"
+      "value": ".+\\n"
     },
     "description": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "description_line"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_newline"
+          }
+        ]
+      }
+    },
+    "description_line": {
       "type": "TOKEN",
       "content": {
         "type": "PREC",
         "value": -1,
         "content": {
           "type": "PATTERN",
-          "value": "[\\s\\S]+"
+          "value": ".+"
         }
       }
+    },
+    "scenario": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "Scenario: "
+        },
+        {
+          "type": "SYMBOL",
+          "name": "title"
+        }
+      ]
+    },
+    "_newline": {
+      "type": "PATTERN",
+      "value": "\\r?\\n"
     }
   },
   "extras": [

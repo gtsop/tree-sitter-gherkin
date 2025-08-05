@@ -3,12 +3,17 @@ Feature File
 ============
 
 Feature: Feature Title
+  
+  This is the description
 
-  some description that may or may not exist
+  Scenario: My Scenario
 
 ---
 
 (source_file
   (feature_declaration
     (title)
-    (description)))
+    (description
+      (description_line))
+    (scenario
+      (title))))

@@ -16,14 +16,23 @@ module.exports = grammar({
     ),
 
     feature_declaration: $ => seq(
-      "Feature",
-      ": ",
+      "Feature: ",
       $.title,
-      optional($.description)
+      optional($.description),
+      $.scenario
     ),
 
-    title: _ => /.*\n/,
+    title: _ => /.+\n/,
 
-    description: _ => token(prec(-1, /[\s\S]+/))
+    description: $ => repeat1(seq($.description_line, $._newline)),
+
+    description_line: _ => token(prec(-1, /.+/)),
+
+    scenario: $ => seq(
+      "Scenario: ",
+      $.title
+    ),
+
+    _newline: _ => /\r?\n/
   },
 });
