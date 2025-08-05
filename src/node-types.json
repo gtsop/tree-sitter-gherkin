@@ -69,11 +69,15 @@
     }
   },
   {
-    "type": "Feature: ",
+    "type": ": ",
     "named": false
   },
   {
-    "type": "Scenario: ",
+    "type": "Feature",
+    "named": false
+  },
+  {
+    "type": "Scenario",
     "named": false
   },
   {

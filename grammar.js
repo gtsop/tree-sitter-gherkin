@@ -16,7 +16,8 @@ module.exports = grammar({
     ),
 
     feature: $ => seq(
-      "Feature: ",
+      "Feature",
+      ": ",
       $.title,
       optional($.description),
       $.scenario
@@ -29,7 +30,8 @@ module.exports = grammar({
     description_line: _ => token(prec(-1, /.+/)),
 
     scenario: $ => seq(
-      "Scenario: ",
+      "Scenario",
+      ": ",
       $.title
     ),
 

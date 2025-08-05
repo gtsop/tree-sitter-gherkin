@@ -16,7 +16,11 @@
       "members": [
         {
           "type": "STRING",
-          "value": "Feature: "
+          "value": "Feature"
+        },
+        {
+          "type": "STRING",
+          "value": ": "
         },
         {
           "type": "SYMBOL",
@@ -76,7 +80,11 @@
       "members": [
         {
           "type": "STRING",
-          "value": "Scenario: "
+          "value": "Scenario"
+        },
+        {
+          "type": "STRING",
+          "value": ": "
         },
         {
           "type": "SYMBOL",
