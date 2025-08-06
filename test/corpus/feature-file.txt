@@ -13,11 +13,11 @@ Feature: Feature Title
 
   Scenario: My Scenario
     Given some Given state
-    Given some Given state
+    And some Given state
     When I do a When
-    When I do a When
+    And I do a When
     Then I see a Then
-    Then I see a Then
+    And I see a Then
 
 ---
 
@@ -26,18 +26,25 @@ Feature: Feature Title
     (title)
     (description (description_line))
     (background
-      (given (step))
-      (when (step))
-      (then (step))
+      (steps
+        (given (step))
+        (when (step))
+        (then (step))
+      )
     )
     (scenario
       (title)
-      (given (step))
-      (given (step))
-      (when (step))
-      (when (step))
-      (then (step))
-      (then (step))
+      (steps
+        (given (step)
+          (and (step))
+        )
+        (when (step)
+          (and (step))
+        )
+        (then (step)
+          (and (step))
+        )
+      )
     )
   )
 )

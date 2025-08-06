@@ -16,8 +16,8 @@ module.exports = grammar({
     ),
 
     feature: $ => seq(
-      "Feature",
-      ": ",
+      "Feature:",
+      " ",
       $.title,
       optional($.description),
       optional($.background),
@@ -31,25 +31,42 @@ module.exports = grammar({
     description_line: _ => token(prec(-1, /.+/)),
 
     background: $ => seq(
-      "Background",
-      ":\n",
-      optional(repeat($.given)),
-      optional(repeat($.when)),
-      optional(repeat($.then)),
+      "Background:",
+      "\n",
+      $.steps
     ),
 
     scenario: $ => seq(
-      "Scenario",
-      ": ",
+      "Scenario:",
+      " ",
       $.title,
-      optional(repeat($.given)),
-      optional(repeat($.when)),
-      optional(repeat($.then)),
+      $.steps
     ),
 
-    given: $ => seq("Given", " ", $.step),
-    when: $ => seq("When", " ", $.step),
-    then: $ => seq("Then", " ", $.step),
+    steps: $ => repeat1(
+      choice(
+        $.given,
+        $.when,
+        $.then,
+      )
+    ),
+
+    given: $ => seq(
+      "Given", " ", $.step,
+      optional(repeat($.and))
+    ),
+
+    when: $ => seq(
+      "When", " ", $.step,
+      optional(repeat($.and))
+    ),
+
+    then: $ => seq(
+      "Then", " ", $.step,
+      optional(repeat($.and))
+    ),
+
+    and: $ => seq("And", " ", $.step),
 
     step: _ => /.+\n/,
 

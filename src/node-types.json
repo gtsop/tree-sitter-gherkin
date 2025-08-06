@@ -1,22 +1,29 @@
 [
   {
+    "type": "and",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "step",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "background",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
-      "required": false,
+      "multiple": false,
+      "required": true,
       "types": [
         {
-          "type": "given",
-          "named": true
-        },
-        {
-          "type": "then",
-          "named": true
-        },
-        {
-          "type": "when",
+          "type": "steps",
           "named": true
         }
       ]
@@ -69,9 +76,13 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "and",
+          "named": true
+        },
         {
           "type": "step",
           "named": true
@@ -88,19 +99,11 @@
       "required": true,
       "types": [
         {
-          "type": "given",
-          "named": true
-        },
-        {
-          "type": "then",
+          "type": "steps",
           "named": true
         },
         {
           "type": "title",
-          "named": true
-        },
-        {
-          "type": "when",
           "named": true
         }
       ]
@@ -128,13 +131,40 @@
     "fields": {}
   },
   {
+    "type": "steps",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "given",
+          "named": true
+        },
+        {
+          "type": "then",
+          "named": true
+        },
+        {
+          "type": "when",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "then",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "and",
+          "named": true
+        },
         {
           "type": "step",
           "named": true
@@ -152,9 +182,13 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "and",
+          "named": true
+        },
         {
           "type": "step",
           "named": true
@@ -163,23 +197,23 @@
     }
   },
   {
+    "type": "\n",
+    "named": false
+  },
+  {
     "type": " ",
     "named": false
   },
   {
-    "type": ":\n",
+    "type": "And",
     "named": false
   },
   {
-    "type": ": ",
+    "type": "Background:",
     "named": false
   },
   {
-    "type": "Background",
-    "named": false
-  },
-  {
-    "type": "Feature",
+    "type": "Feature:",
     "named": false
   },
   {
@@ -187,7 +221,7 @@
     "named": false
   },
   {
-    "type": "Scenario",
+    "type": "Scenario:",
     "named": false
   },
   {

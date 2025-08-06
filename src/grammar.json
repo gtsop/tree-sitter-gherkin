@@ -16,11 +16,11 @@
       "members": [
         {
           "type": "STRING",
-          "value": "Feature"
+          "value": "Feature:"
         },
         {
           "type": "STRING",
-          "value": ": "
+          "value": " "
         },
         {
           "type": "SYMBOL",
@@ -95,56 +95,15 @@
       "members": [
         {
           "type": "STRING",
-          "value": "Background"
+          "value": "Background:"
         },
         {
           "type": "STRING",
-          "value": ":\n"
+          "value": "\n"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "REPEAT",
-              "content": {
-                "type": "SYMBOL",
-                "name": "given"
-              }
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "REPEAT",
-              "content": {
-                "type": "SYMBOL",
-                "name": "when"
-              }
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "REPEAT",
-              "content": {
-                "type": "SYMBOL",
-                "name": "then"
-              }
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "type": "SYMBOL",
+          "name": "steps"
         }
       ]
     },
@@ -153,62 +112,41 @@
       "members": [
         {
           "type": "STRING",
-          "value": "Scenario"
+          "value": "Scenario:"
         },
         {
           "type": "STRING",
-          "value": ": "
+          "value": " "
         },
         {
           "type": "SYMBOL",
           "name": "title"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "REPEAT",
-              "content": {
-                "type": "SYMBOL",
-                "name": "given"
-              }
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "REPEAT",
-              "content": {
-                "type": "SYMBOL",
-                "name": "when"
-              }
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "REPEAT",
-              "content": {
-                "type": "SYMBOL",
-                "name": "then"
-              }
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "type": "SYMBOL",
+          "name": "steps"
         }
       ]
+    },
+    "steps": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "given"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "when"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "then"
+          }
+        ]
+      }
     },
     "given": {
       "type": "SEQ",
@@ -224,6 +162,21 @@
         {
           "type": "SYMBOL",
           "name": "step"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "and"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },
@@ -241,6 +194,21 @@
         {
           "type": "SYMBOL",
           "name": "step"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "and"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },
@@ -250,6 +218,38 @@
         {
           "type": "STRING",
           "value": "Then"
+        },
+        {
+          "type": "STRING",
+          "value": " "
+        },
+        {
+          "type": "SYMBOL",
+          "name": "step"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "and"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "and": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "And"
         },
         {
           "type": "STRING",
