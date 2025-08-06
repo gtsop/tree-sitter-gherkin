@@ -51,8 +51,11 @@
           ]
         },
         {
-          "type": "SYMBOL",
-          "name": "scenario"
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "scenario"
+          }
         }
       ]
     },

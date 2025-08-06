@@ -21,7 +21,7 @@ module.exports = grammar({
       $.title,
       optional($.description),
       optional($.background),
-      $.scenario
+      repeat($.scenario)
     ),
 
     title: _ => /.+\n/,
