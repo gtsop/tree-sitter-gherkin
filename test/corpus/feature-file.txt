@@ -6,6 +6,11 @@ Feature: Feature Title
   
   This is the description
 
+  Background:
+    Given g
+    When w
+    Then t
+
   Scenario: My Scenario
     Given some Given state
     Given some Given state
@@ -19,8 +24,11 @@ Feature: Feature Title
 (source_file
   (feature
     (title)
-    (description
-      (description_line)
+    (description (description_line))
+    (background
+      (given (step))
+      (when (step))
+      (then (step))
     )
     (scenario
       (title)

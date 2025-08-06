@@ -1,5 +1,28 @@
 [
   {
+    "type": "background",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "given",
+          "named": true
+        },
+        {
+          "type": "then",
+          "named": true
+        },
+        {
+          "type": "when",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "description",
     "named": true,
     "fields": {},
@@ -22,6 +45,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "background",
+          "named": true
+        },
         {
           "type": "description",
           "named": true
@@ -140,7 +167,15 @@
     "named": false
   },
   {
+    "type": ":\n",
+    "named": false
+  },
+  {
     "type": ": ",
+    "named": false
+  },
+  {
+    "type": "Background",
     "named": false
   },
   {

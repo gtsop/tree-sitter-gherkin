@@ -20,6 +20,7 @@ module.exports = grammar({
       ": ",
       $.title,
       optional($.description),
+      optional($.background),
       $.scenario
     ),
 
@@ -28,6 +29,14 @@ module.exports = grammar({
     description: $ => repeat1(seq($.description_line, $._newline)),
 
     description_line: _ => token(prec(-1, /.+/)),
+
+    background: $ => seq(
+      "Background",
+      ":\n",
+      optional(repeat($.given)),
+      optional(repeat($.when)),
+      optional(repeat($.then)),
+    ),
 
     scenario: $ => seq(
       "Scenario",
