@@ -7,6 +7,12 @@ Feature: Feature Title
   This is the description
 
   Scenario: My Scenario
+    Given some Given state
+    Given some Given state
+    When I do a When
+    When I do a When
+    Then I see a Then
+    Then I see a Then
 
 ---
 
@@ -14,6 +20,16 @@ Feature: Feature Title
   (feature
     (title)
     (description
-      (description_line))
+      (description_line)
+    )
     (scenario
-      (title))))
+      (title)
+      (given (step))
+      (given (step))
+      (when (step))
+      (when (step))
+      (then (step))
+      (then (step))
+    )
+  )
+)

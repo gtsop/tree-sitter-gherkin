@@ -32,8 +32,17 @@ module.exports = grammar({
     scenario: $ => seq(
       "Scenario",
       ": ",
-      $.title
+      $.title,
+      optional(repeat($.given)),
+      optional(repeat($.when)),
+      optional(repeat($.then)),
     ),
+
+    given: $ => seq("Given", " ", $.step),
+    when: $ => seq("When", " ", $.step),
+    then: $ => seq("Then", " ", $.step),
+
+    step: _ => /.+\n/,
 
     _newline: _ => /\r?\n/
   },
