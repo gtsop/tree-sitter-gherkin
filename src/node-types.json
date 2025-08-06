@@ -128,7 +128,17 @@
   {
     "type": "step",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "steps",
@@ -171,11 +181,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "title",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "when",
@@ -234,6 +239,14 @@
   },
   {
     "type": "description_line",
+    "named": true
+  },
+  {
+    "type": "string",
+    "named": true
+  },
+  {
+    "type": "title",
     "named": true
   }
 ]

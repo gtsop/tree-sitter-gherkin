@@ -18,6 +18,7 @@ Feature: Feature Title
     And I do a When
     Then I see a Then
     And I see a Then
+    And it should "capture some" strings ideally
 
 ---
 
@@ -43,6 +44,9 @@ Feature: Feature Title
         )
         (then (step)
           (and (step))
+          (and
+            (step (string))
+          )
         )
       )
     )

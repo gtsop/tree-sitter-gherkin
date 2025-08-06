@@ -68,8 +68,15 @@ module.exports = grammar({
 
     and: $ => seq("And", " ", $.step),
 
-    step: _ => /.+\n/,
+    step: $ => repeat1(
+      choice(
+        $.string,
+        token(prec(-1, /[^"\n]+/))
+      )
+    ),
 
-    _newline: _ => /\r?\n/
+    _newline: _ => /\r?\n/,
+
+    string: _ => token(seq('"', repeat(/[^"\n\\]/), '"')),
   },
 });
